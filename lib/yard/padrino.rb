@@ -22,7 +22,7 @@ module YARD
     YARD::Tags::Library.visible_tags << CONDITION_TAG
 
     YARD::Templates::Engine.register_template_path File.dirname(__FILE__) + '/../../templates'
-
+r
     class RegexpObject
       def initialize(pattern)
         @pattern = pattern
@@ -117,6 +117,10 @@ module YARD
       end
 
       def <=>(target)
+        
+        puts "self #{self.inspect}"
+        puts "target #{target.inspect}"
+        
         r = self.namespace.to_s <=> target.namespace.to_s
         return r if r != 0
 
