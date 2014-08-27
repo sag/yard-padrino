@@ -202,7 +202,8 @@ module YARD
 
       def process_controllers
         name = statement.first.source.gsub(/\s/, '')
-        puts "found controller #{name} #{statement.inspect}"
+        puts "found name #{name}:  #{statement[0].inspect}"
+         puts "found namespace #{namespace} :#{statement[1].inspect}"
         if statement[1] == :'.'
           # Foo::Bar.controllers :baz do ... end style
           klass = ControllerClassObject.new(namespace, name)
