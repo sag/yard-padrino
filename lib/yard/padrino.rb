@@ -144,7 +144,7 @@ module YARD
       end
     end
     
-    class ControllerClass < YARD::CodeObjects::ClassObject
+    class ControllerClassObject < YARD::CodeObjects::ClassObject
       def resource? 
         true
       end
@@ -200,7 +200,7 @@ module YARD
         name = statement.first.source.gsub(/\s/, '')
         if statement[1] == :'.'
           # Foo::Bar.controllers :baz do ... end style
-          klass = YARD::CodeObjects::ClassObject.new(namespace, name)
+          klass = ControllerClassObject.new(namespace, name)
           register(klass)
         else
           # controllers :baz do ... end style
