@@ -88,16 +88,16 @@ module YARD
 
       def <=>(target)
         r = self.namespace.to_s <=> target.namespace.to_s
-        return r if r != 0
+        return r if r != 0 && !r.nil?
 
         r = self.controller.to_s <=> target.controller.to_s
-        return r if r != 0
+        return r if r != 0 && !r.nil?
 
         r = (VERB_ORDER[self.verb] || 0) <=> (VERB_ORDER[target.verb] || 0)
-        return -r if r != 0
+        return -r if r != 0 && !r.nil?
 
         r = self.args <=> target.args
-        return r if r != 0
+        return r if r != 0 && !r.nil?
 
         return 0
       end
