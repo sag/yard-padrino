@@ -202,13 +202,16 @@ module YARD
 
       def process_controllers
         name = statement.first.source.gsub(/\s/, '')
+        puts "found controller #{name}"
         if statement[1] == :'.'
           # Foo::Bar.controllers :baz do ... end style
           klass = ControllerClassObject.new(namespace, name)
           register(klass)
+          puts "register class #{name}"
         else
           # controllers :baz do ... end style
           klass = namespace
+          puts "old school"
         end
 
         controller = nil
