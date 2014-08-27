@@ -22,7 +22,7 @@ module YARD
     YARD::Tags::Library.visible_tags << CONDITION_TAG
 
     YARD::Templates::Engine.register_template_path File.dirname(__FILE__) + '/../../templates'
-r
+
     class RegexpObject
       def initialize(pattern)
         @pattern = pattern
