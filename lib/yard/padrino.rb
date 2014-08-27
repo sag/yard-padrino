@@ -207,7 +207,7 @@ module YARD
           # Foo::Bar.controllers :baz do ... end style
           klass = ControllerClassObject.new(namespace, name)
           register(klass)
-          puts "register class #{name}"
+          puts "register class #{namespace}  #{name}"
         else
           # controllers :baz do ... end style
           klass = namespace
