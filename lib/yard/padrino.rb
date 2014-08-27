@@ -205,7 +205,7 @@ module YARD
         
          puts "found namespace #{namespace} :#{statement[1].inspect}"
         if statement[1] == :'.'
-          name = statement[3]
+          name = statement[3].source
           puts "found name #{name}}"
           # Foo::Bar.controllers :baz do ... end style
           klass = ControllerClassObject.new(name_s, name)
