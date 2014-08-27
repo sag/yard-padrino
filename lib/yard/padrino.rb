@@ -149,6 +149,10 @@ module YARD
         true
       end
       
+      def restful?
+        true
+      end
+      
     end
 
     class Handler < YARD::Handlers::Ruby::Base
