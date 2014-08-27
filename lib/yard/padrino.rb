@@ -61,6 +61,14 @@ module YARD
 
         signature = display_name
       end
+      
+      def restful?
+          true
+      end
+      
+      def resource?
+         true
+      end
 
       def <=>(target)
         self.name <=> target.name
@@ -118,8 +126,7 @@ module YARD
 
       def <=>(target)
         
-        puts "self #{self.inspect}"
-        puts "target #{target.inspect}"
+    
         
         r = self.namespace.to_s <=> target.namespace.to_s
         return r if r != 0
