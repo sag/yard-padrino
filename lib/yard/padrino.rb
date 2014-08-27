@@ -143,6 +143,13 @@ module YARD
         return 0
       end
     end
+    
+    class ControllerClass < YARD::CodeObjects::ClassObject
+      def resource? 
+        true
+      end
+      
+    end
 
     class Handler < YARD::Handlers::Ruby::Base
       handles method_call(:helpers)
